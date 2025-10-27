@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   width: 100%;
   display: block;
   background-image: url("./assets/hearts.gif");
+}
+
+h1, h2, h3 {
+  font-family: "Great Vibes", cursive;
 }
 
 * {
@@ -13,43 +25,3 @@ body {
   height: inherit;
 }
 
-.page {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-inline: 1rem;
-  overflow: hidden;
-  position: relative;
-}
-
-.page__wrapper {
-  z-index: 1;
-}
-
-.nina {
-  width: 360px;
-  position: absolute;
-  right: 30%;
-  top: 50%;
-  transform: rotate(10deg) translateY(-50%);
-  z-index: -1;
-}
-
-input[type="text"] {
-  background: transparent;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid red;
-}
-
-input[type="text"]:focus-visible {
-  outline: none;
-}
-
-button {
-  color: #fff;
-  background-color: red;
-}

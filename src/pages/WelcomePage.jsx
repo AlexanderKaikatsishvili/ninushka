@@ -10,7 +10,7 @@ export const WelcomePage = () => {
             <div className="page__wrapper">
                 <h1>Привіт моя кохана <br/> Нінушенька</h1>
                 <h2>Спочатку мені треба переконатись, що це точно ти 😘</h2>
-                <img className="nina" src={Ninochka} alt=""/>
+                <img className="photo absolute" src={Ninochka} alt=""/>
             </div>
         </section>
     )
