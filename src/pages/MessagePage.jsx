@@ -1,5 +1,5 @@
 import {useRef, useState} from "react";
-import soundFile from './../assets/Joe Good Girls.mp3';
+import soundFile from './../assets/sweet.mp3';
 import videoFile from './../assets/horse.mp4';
 import beauty from './../assets/beauty.jpg';
 import kartina from './../assets/kartina.jpg';
@@ -29,7 +29,7 @@ export const MessagePage = () => {
     const countToShow = (e) => {
         setCount(count + 1);
 
-        if (count >= 4) {
+        if (count >= 9) {
             e.target.style.display = 'none';
         }
     }
@@ -41,55 +41,73 @@ export const MessagePage = () => {
     return (
         <section className={isDark ? "page dark" : "page"}>
             <div className="page__wrapper">
-                <h1>Ура!!! Це дійсно ти!</h1>
-                <h2>Увімкни для атмосфери)) <button onClick={togglePlay} className="play-btn"><img src={playIcon} alt=""/></button></h2>
-                {
-                    isPlaying && <h3>Ну як тобі?)</h3>
-                }
+                <div className="section-viewport">
+                    <h1>Ура!!! Це дійсно ти!</h1>
+                </div>
 
-                <h2>Також можеш вимкнути світло для більшої романтики)
+                <div className="section-viewport">
+                    <h2 style={{display: 'flex', alignItems: 'center', gap: "1rem"}}>Увімкни для атмосфери)) <button onClick={togglePlay} className="play-btn"><img src={playIcon} alt=""/></button></h2>
+                    {
+                        isPlaying && <p>Ну як тобі?)</p>
+                    }
 
-                    <button onClick={makeDark} className={isDark ? "switch-btn darken" : "switch-btn"}>
-                        <img src={lightIcon} alt=""/>
-                    </button>
-                </h2>
+                    <h2 style={{display: 'flex', alignItems: 'center'}}>Також можеш вимкнути світло для більшої романтики)
 
-                <p>Ось і пройшов ще один чудовий, сповнений щастя, місяць! Я так люблю тебе, маленька! Твою посмішку, твій сміх! Твою щирість та справжність!</p>
+                        <button onClick={makeDark} className={isDark ? "switch-btn darken" : "switch-btn"}>
+                            <img src={lightIcon} alt=""/>
+                        </button>
+                    </h2>
+                </div>
 
-                <h2>Якщо хочеш побачити круту наєздніцу, то швидко клікай по кнопці багато разів</h2>
-                <div>
-                    {count >= 5 &&
+                <div className="section-viewport">
+                    <p>Ось і пройшов ще один чудовий, сповнений щастя, місяць! Я так люблю тебе! Твою посмішку, всі твої смішні сцени, локоточок зігнутий, коли свариш мене! Твою щирість та справжність! Твою радість від смачної їжі! Та невдоволення, коли я щось не розповідаю "по першому трєбованію")))</p>
+                </div>
+
+                <div className="section-viewport">
+                    <h2>Якщо хочеш побачити саму круту наєздніцу, то швидко клікай по кнопці багато разів</h2>
                         <video
                             width="auto"
                             height="360"
                             controls
                             autoPlay={false}
                             muted
+                            style={{display: count >= 10 ? 'block' : 'none'}}
                         >
                             <source src={videoFile} type="video/mp4"/>
                             Ваш браузер не поддерживает видео.
                         </video>
-                    }
+
+                        {count >= 10 &&
+                            <p>Ти тут така смішна! Мені так подобається бачити тебе щасливою! Твій сміх - моя улюблена пісня!</p>
+                        }
+
+                    <button className="btn" onClick={countToShow}>Клікай ще хоча б {10 - count} раз</button>
                 </div>
-
-                <button className="btn" onClick={countToShow}>Click me</button>
-
 
                 <div className="photo-block">
                     <h2>Ти сповнюєш наш дім такою турботою та щастям!</h2>
                     <img style={{transform: `rotate(${-15 * Math.random()}deg)`}} className="photo" src={kartina} alt=""/>
                 </div>
+
                 <div className="photo-block">
                     <h2>Ти тут така ніжна та тендітна! Така жіночна!</h2>
                     <img style={{transform: `rotate(${15 * Math.random()}deg)`}} className="photo" src={nejnost} alt=""/>
                 </div>
+
                 <div className="photo-block">
                     <h2>Тут ти моя маленька сонюшка</h2>
                     <img style={{transform: `rotate(${-15 * Math.random()}deg)`}} className="photo" src={sonya} alt=""/>
                 </div>
+
                 <div className="photo-block">
                     <h2>Бути поряд з такою жінкою - неймовірне блаженство!</h2>
                     <img style={{transform: `rotate(${15 * Math.random()}deg)`}} className="photo" src={beauty} alt=""/>
+                </div>
+
+                <div className="section-viewport">
+                    <p>Дякую за твою підтримку та віру в мене! Ти особлива жінка! Ти моя смішинка, вітамінка, чіта-дріта, тралі-валі, вкусняшка!</p>
+
+                    <p>Я так хочу бути поруч з тобою кожен день мого життя! <br/> І це так неймовірно чудово входити у восьмий місяць нашого спільного шляху разом! Попри все і всіх!</p>
                 </div>
             </div>
         </section>
